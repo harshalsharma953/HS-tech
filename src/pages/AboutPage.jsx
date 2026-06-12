@@ -3,7 +3,6 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { FiArrowLeft } from "react-icons/fi";
 import { fadeInUp, staggerContainer, staggerItem } from "../animations/variants";
-import founderImage from "../assets/images/founder.png";
 
 const AboutPage = () => {
   const values = [
@@ -53,17 +52,20 @@ const AboutPage = () => {
             >
               <div className="w-full h-full rounded-full bg-dark" />
             </motion.div>
-            <div className="absolute inset-1 rounded-full overflow-hidden">
-              <img src={founderImage} alt="Harshal Sharma" className="w-full h-full object-cover" />
+            <div className="absolute inset-0 flex items-center justify-center">
+              <span className="text-4xl font-bold gradient-text">PS</span>
             </div>
           </div>
           <div>
-            <h2 className="text-3xl font-bold mb-2">Harshal Sharma</h2>
+            <h2 className="text-3xl font-bold mb-2">Mrs. Pratibha Sharma</h2>
             <p className="text-primary font-semibold mb-4">Founder & CEO</p>
             <p className="text-secondary leading-relaxed">
-              Harshal Sharma founded HS Tech with a vision to make premium software accessible to businesses of all sizes. 
-              With a passion for technology and a drive for excellence, he leads the team in delivering innovative solutions 
+              Mrs. Pratibha Sharma founded HS Tech with a vision to make premium software accessible to businesses of all sizes. 
+              With a passion for technology and a drive for excellence, she leads the team in delivering innovative solutions 
               that help businesses grow digitally.
+            </p>
+            <p className="text-secondary italic mt-4 border-l-2 border-primary pl-4">
+              "Technology is not just about code — it's about creating solutions that empower people and transform lives."
             </p>
           </div>
         </motion.div>

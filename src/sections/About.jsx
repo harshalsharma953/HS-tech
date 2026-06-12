@@ -5,7 +5,6 @@ import {
   staggerContainer,
   staggerItem,
 } from "../animations/variants";
-import founderImage from "../assets/images/founder.png";
 
 const About = () => {
   const aboutPoints = [
@@ -43,7 +42,7 @@ const About = () => {
         <motion.div className="text-center mb-16" {...fadeInUp}>
           <h2 className="text-4xl md:text-5xl font-bold mb-4">About HS Tech</h2>
           <p className="text-secondary max-w-2xl mx-auto">
-            Founded by Harshal Sharma, HS Tech is a premium software company
+            Founded by Mrs. Pratibha Sharma, HS Tech is a premium software company
             dedicated to transforming businesses through cutting-edge technology
             solutions.
           </p>
@@ -80,9 +79,8 @@ const About = () => {
               className="glass p-8 rounded-xl text-center"
               whileHover={{ scale: 1.02 }}
             >
-              {/* Founder image */}
-              <div className="relative w-32 h-32 mx-auto mb-6">
-                {/* Animated background ring */}
+              {/* Animated initial ring */}
+              <div className="relative w-28 h-28 mx-auto mb-6">
                 <motion.div
                   className="absolute inset-0 rounded-full bg-gradient-to-br from-primary to-accent"
                   animate={{ rotate: 360 }}
@@ -91,29 +89,15 @@ const About = () => {
                 >
                   <div className="w-full h-full rounded-full bg-dark" />
                 </motion.div>
-                {/* Stable image */}
-                <div className="absolute inset-1 rounded-full overflow-hidden">
-                  <img
-                    src={founderImage}
-                    alt="Harshal Sharma - Founder"
-                    className="w-full h-full object-cover rounded-full"
-                    onError={(e) => {
-                      e.target.style.display = "none";
-                      if (e.target.nextElementSibling) {
-                        e.target.nextElementSibling.style.display = "flex";
-                      }
-                    }}
-                  />
-                  <div className="w-full h-full rounded-full bg-dark-secondary flex items-center justify-center border-2 border-primary/30 hidden">
-                    <span className="text-4xl">👨‍💼</span>
-                  </div>
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <span className="text-3xl font-bold gradient-text">PS</span>
                 </div>
               </div>
 
-              <h3 className="text-2xl font-bold mb-2">Harshal Sharma</h3>
+              <h3 className="text-2xl font-bold mb-2">Mrs. Pratibha Sharma</h3>
               <p className="text-primary font-semibold mb-4">Founder & CEO</p>
-              <p className="text-secondary mb-6">
-                Transforming Ideas Into Digital Excellence
+              <p className="text-secondary italic mb-6">
+                "Technology is not just about code — it's about creating solutions that empower people and transform lives."
               </p>
 
               {/* Contact Info */}

@@ -1,7 +1,7 @@
 // Company Information
 export const COMPANY_INFO = {
   name: "HS Tech",
-  founder: "Harshal Sharma",
+  founder: "Mrs. Pratibha Sharma",
   email: "hs.techind@gmail.com",
   phone: "+91 7024630069",
   address: "Indore - Betma - 453001, Madhya Pradesh, India",
@@ -246,10 +246,10 @@ export const STATISTICS = [
 // Team (for future expansion)
 export const TEAM = [
   {
-    name: "Harshal Sharma",
+    name: "Mrs. Pratibha Sharma",
     role: "Founder & CEO",
-    bio: "Visionary technology leader with 10+ years of experience in building scalable enterprise solutions.",
-    avatar: "👨‍💼",
+    bio: "Visionary technology leader dedicated to creating solutions that empower people and transform lives.",
+    avatar: "👩‍💼",
     social: {
       linkedin: "#",
       twitter: "#",
