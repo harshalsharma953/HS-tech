@@ -1,25 +1,38 @@
 // Company Information
 export const COMPANY_INFO = {
   name: "HS Tech",
+  founded: "2026",
   founder: "Mrs. Pratibha Sharma",
   email: "hs.techind@gmail.com",
-  phone: "+91 7024630069",
+  phones: ["+91 7024630069", "+91 8225819957"],
+  website: "https://hs-tech-steel.vercel.app",
   address: "Indore - Betma - 453001, Madhya Pradesh, India",
+  googleMaps: "https://maps.app.goo.gl/TkHAqMJAG2ZSRacv9",
   tagline: "Transforming Ideas Into Digital Excellence",
   subheading:
-    "Mobile Apps, Web Applications, AI Solutions & Enterprise Software Development",
+    "Mobile Apps, Web Applications, Custom Software & UI/UX Design",
+  description:
+    "HS Tech is a modern IT solutions company specializing in high-quality mobile applications, websites, custom software, UI/UX design, and scalable digital solutions. We help startups, businesses, and enterprises transform ideas into innovative digital products through cutting-edge technology, creativity, and user-focused development.",
+  goal: "To deliver fast, secure, scalable, and visually stunning solutions that help businesses grow in the digital world.",
+  mission:
+    "To empower businesses with innovative digital solutions that are scalable, secure, and built for long-term success.",
+  vision:
+    "To become one of India's most trusted technology companies by delivering world-class software experiences and helping businesses embrace digital transformation.",
+  social: {
+    instagram:
+      "https://www.instagram.com/hstech.ind?igsh=MWp2bDF3M2FldmYybw==",
+    linkedin: "https://www.linkedin.com/company/hstech-ind/",
+    facebook: "https://facebook.com/share/19ifK4PjMK/?mibextid=wwXIfr",
+  },
 };
 
 // Colors
 export const COLORS = {
-  primary: "#0EA5FF",
-  secondary: "#C0C0C0",
-  accent: "#38BDF8",
-  dark: "#050816",
-  darkSecondary: "#0F172A",
-  darkTertiary: "#1E293B",
-  neon: "#00D9FF",
-  neonPink: "#FF006E",
+  primary: "#1E90FF",
+  darkBlue: "#0A3D91",
+  silver: "#D9E3F0",
+  white: "#FFFFFF",
+  dark: "#0B0F19",
 };
 
 // Navigation Links
@@ -37,66 +50,80 @@ export const NAV_LINKS = [
 export const SERVICES = [
   {
     icon: "📱",
-    title: "Mobile App Development",
+    title: "Android App Development",
     description:
-      "Native Android & iOS apps with modern UI/UX and seamless performance.",
+      "Native Android applications with modern Material Design and optimal performance.",
+    category: "Mobile",
+  },
+  {
+    icon: "apple",
+    title: "iOS App Development",
+    description:
+      "Premium iOS applications with smooth performance and Apple design guidelines.",
     category: "Mobile",
   },
   {
     icon: "⚛️",
-    title: "React Native Development",
+    title: "Cross Platform Apps (React Native)",
     description:
-      "Cross-platform mobile solutions that work on both iOS and Android.",
+      "Build once, deploy everywhere. Cost-effective cross-platform mobile solutions.",
     category: "Mobile",
   },
   {
     icon: "🌐",
-    title: "Web Development",
+    title: "Website Development",
     description:
-      "Full-stack web applications with modern frameworks and best practices.",
+      "Responsive, fast, and SEO-friendly websites built with modern frameworks.",
     category: "Web",
   },
   {
     icon: "🛠️",
     title: "Custom Software Development",
     description:
-      "Tailored enterprise software solutions built to your specifications.",
-    category: "Enterprise",
-  },
-  {
-    icon: "🤖",
-    title: "AI & Automation",
-    description:
-      "Machine learning and AI-powered solutions for business intelligence.",
-    category: "AI",
-  },
-  {
-    icon: "🗄️",
-    title: "Cloud Integration",
-    description:
-      "Seamless cloud deployment and management on AWS, Azure, or GCP.",
-    category: "Cloud",
-  },
-  {
-    icon: "💼",
-    title: "ERP Solutions",
-    description:
-      "Enterprise resource planning systems for streamlined operations.",
+      "Tailored enterprise software solutions built to your exact specifications.",
     category: "Enterprise",
   },
   {
     icon: "🎨",
     title: "UI/UX Design",
     description:
-      "Premium user experience and interface design for modern applications.",
+      "Premium user experience and interface design for modern digital products.",
     category: "Design",
   },
   {
-    icon: "🛒",
-    title: "E-commerce Development",
+    icon: "🗄️",
+    title: "Database Development",
     description:
-      "Complete e-commerce platforms and online stores with payment integration.",
-    category: "Web",
+      "Robust database architecture and management for scalable applications.",
+    category: "Backend",
+  },
+  {
+    icon: "☁️",
+    title: "Cloud Application Development",
+    description:
+      "Scalable cloud-native applications deployed on modern cloud platforms.",
+    category: "Cloud",
+  },
+  {
+    icon: "🔌",
+    title: "API Development",
+    description:
+      "RESTful and GraphQL APIs for seamless integration and data exchange.",
+    category: "Backend",
+  },
+  {
+    icon: "🧪",
+    title: "Software Testing",
+    description:
+      "Comprehensive testing including unit, integration, and end-to-end testing.",
+    category: "Quality",
+  },
+  {
+    icon: "🔧",
+    title: "Maintenance & Support",
+    description:
+      "Ongoing maintenance, bug fixes, updates, and technical support services.",
+    category: "Support",
   },
 ];
 
@@ -108,12 +135,14 @@ export const TECHNOLOGIES = [
   { name: "Express.js", icon: "⚡", category: "Backend" },
   { name: "MongoDB", icon: "🍃", category: "Database" },
   { name: "Firebase", icon: "🔥", category: "Backend" },
-  { name: "TypeScript", icon: "📘", category: "Language" },
+  { name: "MySQL", icon: "🐬", category: "Database" },
   { name: "JavaScript", icon: "✨", category: "Language" },
-  { name: "Tailwind CSS", icon: "🎨", category: "Styling" },
-  { name: "Android", icon: "🤖", category: "Mobile" },
-  { name: "Git", icon: "📂", category: "Tools" },
+  { name: "TypeScript", icon: "📘", category: "Language" },
+  { name: "Java", icon: "☕", category: "Language" },
+  { name: "HTML5", icon: "🌐", category: "Frontend" },
+  { name: "CSS3", icon: "🎨", category: "Frontend" },
   { name: "REST APIs", icon: "🔌", category: "Backend" },
+  { name: "Git", icon: "📂", category: "Tools" },
 ];
 
 // Portfolio Projects
@@ -123,48 +152,132 @@ export const PORTFOLIO_PROJECTS = [
     title: "Rajmani Jewellers",
     category: "Mobile App",
     description:
-      "Premium jewellery e-commerce mobile application with stunning UI",
+      "Jewellery business application featuring gold & silver rates, jewellery collections, exclusive offers, customer notifications, and store information.",
     features: [
-      "Product Catalog",
-      "Jewellery Showcase",
-      "User Friendly Interface",
-      "Business Growth",
+      "Gold & Silver Rates",
+      "Jewellery Collections",
+      "Exclusive Offers",
+      "Customer Notifications",
+      "Store Information",
     ],
-    stats: { downloads: "50K+", rating: "4.8", users: "30K+" },
-    image: "💎",
+    icon: "💎",
     technologies: ["React Native", "Node.js", "MongoDB", "Firebase"],
   },
   {
     id: 2,
     title: "Property Bazar",
-    category: "Real Estate Platform",
+    category: "Mobile App",
     description:
-      "Comprehensive real estate marketplace platform with broker network",
+      "Real Estate platform with comprehensive property management and business listings.",
     features: [
-      "Property Listings",
-      "Broker Network",
-      "Loans & Insurance",
-      "Business Directory",
+      "Property Buy & Sell",
+      "Rental Listings",
+      "Business Listings",
+      "Insurance & Loans",
+      "Property Requirements",
+      "Inventory",
+      "Hot Leads",
+      "Latest Offers",
+      "Events & News",
     ],
-    stats: { properties: "5K+", brokers: "500+", transactions: "2K+" },
-    image: "🏢",
-    technologies: ["React", "Node.js", "MongoDB", "AWS"],
+    icon: "🏢",
+    technologies: ["React Native", "Node.js", "MongoDB"],
   },
   {
     id: 3,
     title: "Second Income",
-    category: "FinTech App",
+    category: "Mobile App",
     description:
-      "Wealth management and investment tracking platform for investors",
+      "Investment & Wealth Management application for smart financial planning.",
     features: [
-      "Wealth Management",
-      "Investment Tracking",
+      "Investment Plans",
+      "Portfolio Management",
       "Wallet",
-      "Dashboard",
+      "Fund Management",
+      "Order History",
+      "Financial Dashboard",
     ],
-    stats: { investments: "100M+", users: "50K+", roi: "25%+" },
-    image: "💰",
-    technologies: ["React", "Node.js", "MongoDB", "Firebase"],
+    icon: "💰",
+    technologies: ["React Native", "Node.js", "Firebase"],
+  },
+  {
+    id: 4,
+    title: "Cleaning Service App",
+    category: "Mobile App",
+    description:
+      "On-demand home service application for professional cleaning services.",
+    features: [
+      "Room Cleaning",
+      "Bathroom Cleaning",
+      "Kitchen Cleaning",
+      "Booking System",
+      "Order Tracking",
+      "Notifications",
+      "Address Management",
+      "Payments",
+    ],
+    icon: "🧹",
+    technologies: ["React Native", "Node.js", "MongoDB"],
+  },
+  {
+    id: 5,
+    title: "Book Publication Website",
+    category: "Website",
+    description:
+      "Professional publishing website for book authors with modern responsive design and complete publishing information.",
+    features: [
+      "Author Profiles",
+      "Book Catalog",
+      "Modern Design",
+      "Responsive Layout",
+    ],
+    icon: "📚",
+    technologies: ["React", "Tailwind CSS", "Node.js"],
+  },
+  {
+    id: 6,
+    title: "Portfolio Websites",
+    category: "Website",
+    description:
+      "Modern portfolio websites with stunning animations, smooth transitions, and responsive design for professionals and businesses.",
+    features: [
+      "Animated Sections",
+      "Responsive Design",
+      "Contact Forms",
+      "SEO Optimized",
+    ],
+    icon: "🌐",
+    technologies: ["React", "Tailwind CSS", "Framer Motion"],
+  },
+  {
+    id: 7,
+    title: "Solar Energy Website",
+    category: "Website",
+    description:
+      "Professional website for solar energy company showcasing solar panel solutions, services, and installation packages.",
+    features: [
+      "Service Showcase",
+      "Product Catalog",
+      "Quote Request",
+      "Customer Testimonials",
+    ],
+    icon: "☀️",
+    technologies: ["React", "Tailwind CSS", "Node.js"],
+  },
+  {
+    id: 8,
+    title: "Health & Wellness Website",
+    category: "Website",
+    description:
+      "Healthcare website with doctor profiles, appointment booking, health tips, and patient portal features.",
+    features: [
+      "Doctor Profiles",
+      "Appointment Booking",
+      "Health Blog",
+      "Patient Portal",
+    ],
+    icon: "🏥",
+    technologies: ["React", "Node.js", "MongoDB"],
   },
 ];
 
@@ -200,6 +313,13 @@ export const PROCESS_STEPS = [
   },
   {
     number: "05",
+    title: "Testing & QA",
+    description:
+      "Rigorous testing to ensure your application is bug-free, secure, and performs optimally.",
+    icon: "🧪",
+  },
+  {
+    number: "06",
     title: "Deployment & Support",
     description:
       "Deploy your application and provide ongoing support and maintenance services.",
@@ -237,38 +357,37 @@ export const TESTIMONIALS = [
 
 // Statistics
 export const STATISTICS = [
-  { label: "Projects Delivered", value: 12, suffix: "+" },
-  { label: "Happy Clients", value: 6, suffix: "+" },
+  { label: "Projects Delivered", value: 15, suffix: "+" },
+  { label: "Happy Clients", value: 8, suffix: "+" },
   { label: "Apps Published", value: 5, suffix: "+" },
   { label: "Client Satisfaction", value: 98, suffix: "%" },
 ];
 
-// Team (for future expansion)
-export const TEAM = [
-  {
-    name: "Mrs. Pratibha Sharma",
-    role: "Founder & CEO",
-    bio: "Visionary technology leader dedicated to creating solutions that empower people and transform lives.",
-    avatar: "👩‍💼",
-    social: {
-      linkedin: "#",
-      twitter: "#",
-      github: "#",
-    },
-  },
+// Company Highlights
+export const HIGHLIGHTS = [
+  "Modern UI/UX",
+  "High Performance Applications",
+  "Responsive Websites",
+  "Secure Backend Development",
+  "Scalable Architecture",
+  "Premium User Experience",
+  "Business Automation",
+  "Custom Software Solutions",
+  "Mobile First Approach",
+  "Client Focused Development",
 ];
 
-// FAQs (for future expansion)
+// FAQs
 export const FAQS = [
   {
     question: "What is your development process?",
     answer:
-      "We follow a 5-step process: Requirement Gathering, Planning & Strategy, Design & Prototyping, Development, and Deployment & Support.",
+      "We follow a 6-step process: Requirement Gathering, Planning & Strategy, Design & Prototyping, Development, Testing & QA, and Deployment & Support.",
   },
   {
     question: "How long does a project take?",
     answer:
-      "Project timelines vary depending on complexity and scope. Typically, a mobile app takes 3-6 months and a web application takes 4-8 months.",
+      "Project timelines vary depending on complexity and scope. Typically, a mobile app takes 3-6 months and a web application takes 2-4 months.",
   },
   {
     question: "Do you provide support after launch?",
@@ -278,6 +397,11 @@ export const FAQS = [
   {
     question: "What technologies do you use?",
     answer:
-      "We use modern technologies including React, React Native, Node.js, MongoDB, Firebase, and cloud platforms like AWS and Azure.",
+      "We use modern technologies including React, React Native, Node.js, MongoDB, Firebase, MySQL, and cloud platforms.",
+  },
+  {
+    question: "Do you work with startups?",
+    answer:
+      "Absolutely! We work with startups, small businesses, and enterprises alike. We tailor our solutions to fit your budget and requirements.",
   },
 ];

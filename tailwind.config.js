@@ -4,24 +4,24 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: "#0EA5FF",
-        secondary: "#C0C0C0",
+        primary: "#1E90FF",
+        secondary: "#D9E3F0",
         accent: "#38BDF8",
-        dark: "#050816",
+        dark: "#0B0F19",
         "dark-secondary": "#0F172A",
         "dark-tertiary": "#1E293B",
+        "dark-blue": "#0A3D91",
         neon: "#00D9FF",
-        "neon-pink": "#FF006E",
-        "glow-blue": "#0EA5FF",
+        "glow-blue": "#1E90FF",
       },
       fontFamily: {
         sans: ["Inter", "system-ui", "sans-serif"],
         display: ["Space Grotesk", "sans-serif"],
       },
       boxShadow: {
-        glow: "0 0 20px rgba(14, 165, 255, 0.5)",
-        "glow-lg": "0 0 40px rgba(14, 165, 255, 0.7)",
-        neon: "0 0 10px rgba(0, 217, 255, 0.5), inset 0 0 10px rgba(0, 217, 255, 0.1)",
+        glow: "0 0 20px rgba(30, 144, 255, 0.5)",
+        "glow-lg": "0 0 40px rgba(30, 144, 255, 0.7)",
+        neon: "0 0 10px rgba(30, 144, 255, 0.5), inset 0 0 10px rgba(30, 144, 255, 0.1)",
       },
       animation: {
         float: "float 3s ease-in-out infinite",
@@ -37,8 +37,8 @@ export default {
           "50%": { transform: "translateY(-20px)" },
         },
         glow: {
-          "0%, 100%": { boxShadow: "0 0 20px rgba(14, 165, 255, 0.5)" },
-          "50%": { boxShadow: "0 0 40px rgba(14, 165, 255, 0.8)" },
+          "0%, 100%": { boxShadow: "0 0 20px rgba(30, 144, 255, 0.5)" },
+          "50%": { boxShadow: "0 0 40px rgba(30, 144, 255, 0.8)" },
         },
         pulseGlow: {
           "0%, 100%": { opacity: "0.5" },

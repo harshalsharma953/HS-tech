@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import { COMPANY_INFO } from "../data/content";
 import logoImage from "../assets/images/logo.png";
 
 const Footer = () => {
@@ -10,8 +11,8 @@ const Footer = () => {
     Services: [
       { label: "Mobile Development", href: "#services" },
       { label: "Web Development", href: "#services" },
-      { label: "AI Solutions", href: "#services" },
-      { label: "Cloud Integration", href: "#services" },
+      { label: "UI/UX Design", href: "#services" },
+      { label: "Cloud Applications", href: "#services" },
     ],
     Company: [
       { label: "About Us", href: "/about" },
@@ -20,12 +21,18 @@ const Footer = () => {
       { label: "News", href: "/news" },
     ],
     Support: [
-      { label: "Documentation", href: "#" },
-      { label: "Help Center", href: "#" },
-      { label: "Contact Support", href: "#contact" },
-      { label: "Status", href: "#" },
+      { label: "Contact Us", href: "#contact" },
+      { label: "WhatsApp", href: `https://wa.me/${COMPANY_INFO.phones[0].replace(/[+\s]/g, "")}` },
+      { label: "Email Support", href: `mailto:${COMPANY_INFO.email}` },
+      { label: "Location", href: COMPANY_INFO.googleMaps },
     ],
   };
+
+  const socialLinks = [
+    { name: "Instagram", url: COMPANY_INFO.social.instagram },
+    { name: "LinkedIn", url: COMPANY_INFO.social.linkedin },
+    { name: "Facebook", url: COMPANY_INFO.social.facebook },
+  ];
 
   return (
     <footer className="bg-dark-secondary border-t border-primary/10">
@@ -34,7 +41,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-6 sm:gap-8 mb-6 sm:mb-8">
           {/* Brand */}
           <motion.div
-            className="col-span-1"
+            className="col-span-1 sm:col-span-2"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
@@ -57,10 +64,15 @@ const Footer = () => {
               </div>
               <span className="text-lg font-bold">HS Tech</span>
             </div>
-            <p className="text-secondary text-sm">
+            <p className="text-secondary text-sm mb-4 max-w-xs">
               Transforming ideas into digital excellence with premium software
               solutions.
             </p>
+            <div className="space-y-1 text-secondary text-sm">
+              <p>📧 {COMPANY_INFO.email}</p>
+              <p>📱 {COMPANY_INFO.phones[0]}</p>
+              <p>📍 {COMPANY_INFO.address}</p>
+            </div>
           </motion.div>
 
           {/* Link Columns */}
@@ -86,6 +98,8 @@ const Footer = () => {
                     ) : (
                       <a
                         href={link.href}
+                        target={link.href.startsWith("http") ? "_blank" : undefined}
+                        rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
                         className="text-secondary hover:text-primary transition-colors text-sm"
                       >
                         {link.label}
@@ -110,8 +124,7 @@ const Footer = () => {
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
           >
-            © {currentYear} HS Tech. All rights reserved. | Privacy Policy |
-            Terms of Service
+            © {currentYear} HS Tech. All rights reserved.
           </motion.p>
 
           <motion.div
@@ -121,12 +134,7 @@ const Footer = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            {[
-              { name: "Twitter", url: "#" },
-              { name: "LinkedIn", url: "#" },
-              { name: "GitHub", url: "#" },
-              { name: "Instagram", url: "https://www.instagram.com/hstech.ind?igsh=MWp2bDF3M2FldmYybw==" },
-            ].map((social) => (
+            {socialLinks.map((social) => (
               <a
                 key={social.name}
                 href={social.url}

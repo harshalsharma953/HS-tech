@@ -10,31 +10,34 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 80px;
 }
 
 body {
-  background-color: #050816;
+  background-color: #0B0F19;
   color: #ffffff;
   font-family: "Inter", system-ui, sans-serif;
   overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 /* Smooth scrolling */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background: rgba(15, 23, 42, 0.8);
+  background: rgba(11, 15, 25, 0.9);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(14, 165, 255, 0.6);
-  border-radius: 4px;
+  background: rgba(30, 144, 255, 0.4);
+  border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(14, 165, 255, 0.8);
+  background: rgba(30, 144, 255, 0.7);
 }
 
 /* Custom cursor */
@@ -60,6 +63,10 @@ body {
 /* Gradient text */
 .gradient-text {
   @apply bg-gradient-to-r from-primary via-accent to-neon bg-clip-text text-transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  padding-bottom: 0.05em;
+  display: inline-block;
 }
 
 /* Glow effects */
@@ -95,15 +102,24 @@ body {
 
 /* Glassmorphism */
 .glass {
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.glass:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(30, 144, 255, 0.2);
 }
 
 .glass-dark {
-  background: rgba(5, 8, 22, 0.4);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(14, 165, 255, 0.1);
+  background: rgba(11, 15, 25, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(30, 144, 255, 0.1);
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 /* Section container */
@@ -114,6 +130,21 @@ body {
 /* Smooth transitions */
 .smooth-transition {
   @apply transition-all duration-500 ease-out;
+}
+
+/* Page transition overlay */
+.page-transition {
+  transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Smooth link transitions */
+a, button {
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Image smoothing */
+img {
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 /* Animated underline */
@@ -287,18 +318,19 @@ body {
 
 /* Hover effects */
 .hover-lift {
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .hover-lift:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 20px 40px rgba(14, 165, 255, 0.2);
+  transform: translateY(-8px);
+  box-shadow: 0 20px 60px rgba(30, 144, 255, 0.15), 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
 /* Responsive text */
 @media (max-width: 768px) {
-  .gradient-text {
-    font-size: 1.5rem;
+  .hover-lift:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px rgba(30, 144, 255, 0.1);
   }
 }
 
@@ -306,8 +338,53 @@ body {
 .loading-spinner {
   width: 40px;
   height: 40px;
-  border: 4px solid rgba(14, 165, 255, 0.2);
-  border-top-color: #0ea5ff;
+  border: 4px solid rgba(30, 144, 255, 0.2);
+  border-top-color: #1E90FF;
   border-radius: 50%;
   animation: spin 1s linear infinite;
 }
+
+/* Smooth section transitions */
+section {
+  will-change: transform;
+}
+
+/* Subtle text glow on hover */
+.glow-hover:hover {
+  text-shadow: 0 0 20px rgba(30, 144, 255, 0.4);
+}
+
+/* Card entrance animation */
+@keyframes cardEntrance {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Gradient animation for backgrounds */
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.animated-gradient {
+  background-size: 200% 200%;
+  animation: gradientShift 6s ease infinite;
+}
+
+/* Focus ring for accessibility */
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid rgba(30, 144, 255, 0.6);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+

@@ -1,23 +1,9 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { staggerContainer, staggerItem } from "../animations/variants";
+import { TECHNOLOGIES } from "../data/content";
 
 const Technologies = () => {
-  const technologies = [
-    { name: "React", icon: "⚛️" },
-    { name: "React Native", icon: "📱" },
-    { name: "Node.js", icon: "🟢" },
-    { name: "Express.js", icon: "⚡" },
-    { name: "MongoDB", icon: "🍃" },
-    { name: "Firebase", icon: "🔥" },
-    { name: "TypeScript", icon: "📘" },
-    { name: "JavaScript", icon: "✨" },
-    { name: "Tailwind CSS", icon: "🎨" },
-    { name: "Android", icon: "🤖" },
-    { name: "Git", icon: "📂" },
-    { name: "REST APIs", icon: "🔌" },
-  ];
-
   return (
     <section id="technologies" className="py-12 sm:py-16 md:py-20 lg:py-24">
       <div className="section-container px-4 sm:px-6 lg:px-8">
@@ -37,10 +23,10 @@ const Technologies = () => {
 
         {/* Technologies Grid */}
         <motion.div
-          className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 sm:gap-4 md:gap-6"
+          className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 sm:gap-4 md:gap-6"
           {...staggerContainer}
         >
-          {technologies.map((tech, idx) => (
+          {TECHNOLOGIES.map((tech, idx) => (
             <motion.div
               key={idx}
               className="glass p-3 sm:p-4 md:p-6 rounded-lg sm:rounded-xl text-center group hover-lift"
@@ -54,9 +40,10 @@ const Technologies = () => {
               >
                 {tech.icon}
               </motion.div>
-              <h3 className="font-semibold text-xs sm:text-sm md:text-lg group-hover:text-primary transition-colors">
+              <h3 className="font-semibold text-xs sm:text-sm md:text-base group-hover:text-primary transition-colors">
                 {tech.name}
               </h3>
+              <p className="text-xs text-secondary mt-1">{tech.category}</p>
             </motion.div>
           ))}
         </motion.div>

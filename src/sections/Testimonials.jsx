@@ -49,13 +49,13 @@ const Testimonials = () => {
 
         {/* Testimonials Grid */}
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-3 gap-8"
+          className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8"
           {...staggerContainer}
         >
           {testimonials.map((testimonial, idx) => (
             <motion.div
               key={idx}
-              className="glass p-8 rounded-xl hover-lift"
+              className="glass p-5 sm:p-6 md:p-8 rounded-xl hover-lift"
               variants={staggerItem}
             >
               {/* Stars */}

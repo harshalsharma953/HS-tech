@@ -82,7 +82,7 @@ const Navbar = () => {
 
         {/* CTA Button */}
         <motion.button
-          className="hidden md:block btn-primary"
+          className="hidden lg:block btn-primary"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           onClick={() => {
@@ -97,7 +97,7 @@ const Navbar = () => {
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden text-2xl"
+          className="lg:hidden text-2xl"
           onClick={() => setIsOpen(!isOpen)}
         >
           {isOpen ? <FaTimes /> : <FaBars />}
@@ -107,12 +107,12 @@ const Navbar = () => {
       {/* Mobile Menu */}
       {isOpen && (
         <motion.div
-          className="md:hidden glass mt-4"
+          className="lg:hidden glass mt-4"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -20 }}
         >
-          <div className="section-container py-4 flex flex-col gap-4">
+          <div className="section-container py-4 flex flex-col gap-4 px-4">
             {navItems.map((item) => (
               <Link
                 key={item.to}
@@ -120,7 +120,7 @@ const Navbar = () => {
                 smooth={true}
                 duration={500}
                 offset={-80}
-                className="cursor-pointer hover:text-primary transition-colors"
+                className="cursor-pointer hover:text-primary transition-colors py-2 border-b border-primary/10"
                 onClick={() => setIsOpen(false)}
               >
                 {item.label}

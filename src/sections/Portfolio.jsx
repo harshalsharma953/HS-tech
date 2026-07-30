@@ -1,83 +1,17 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { staggerContainer, staggerItem } from "../animations/variants";
+import { PORTFOLIO_PROJECTS } from "../data/content";
 
 const Portfolio = () => {
   const [filter, setFilter] = useState("All");
-
-  const projects = [
-    {
-      id: 1,
-      title: "Rajmani Jewellers",
-      category: "Mobile App",
-      icon: "💎",
-      description: "Premium jewellery e-commerce mobile application",
-      tech: ["React Native", "Node.js", "MongoDB"],
-    },
-    {
-      id: 2,
-      title: "Property Bazar",
-      category: "Mobile App",
-      icon: "🏢",
-      description: "Comprehensive real estate marketplace platform",
-      tech: ["React Native", "Node.js", "MongoDB"],
-    },
-    {
-      id: 3,
-      title: "Second Income",
-      category: "Mobile App",
-      icon: "💰",
-      description: "Wealth management and investment tracking app",
-      tech: ["React Native", "Firebase", "Node.js"],
-    },
-    {
-      id: 4,
-      title: "Portfolio Website",
-      category: "Website",
-      icon: "🌐",
-      description: "Modern portfolio website with animations",
-      tech: ["React", "Tailwind CSS", "Framer Motion"],
-    },
-    {
-      id: 5,
-      title: "Ollyver Publications",
-      category: "Website",
-      icon: "📚",
-      description: "Book publication website with catalog & ordering",
-      tech: ["React", "Node.js", "MongoDB"],
-    },
-    {
-      id: 6,
-      title: "Ved Tour & Travels",
-      category: "Website",
-      icon: "✈️",
-      description: "Travel booking and tour packages website",
-      tech: ["React", "Tailwind CSS", "Firebase"],
-    },
-    {
-      id: 7,
-      title: "Rajmani Jewellers",
-      category: "Website",
-      icon: "💍",
-      description: "Jewellery showcase and e-commerce website",
-      tech: ["React", "Node.js", "MongoDB"],
-    },
-    {
-      id: 8,
-      title: "HS Tech",
-      category: "Website",
-      icon: "🚀",
-      description: "Company portfolio website with modern animations",
-      tech: ["React", "Tailwind CSS", "Framer Motion"],
-    },
-  ];
 
   const categories = ["All", "Mobile App", "Website"];
 
   const filteredProjects =
     filter === "All"
-      ? projects
-      : projects.filter((p) => p.category === filter);
+      ? PORTFOLIO_PROJECTS
+      : PORTFOLIO_PROJECTS.filter((p) => p.category === filter);
 
   return (
     <section id="portfolio" className="py-12 sm:py-16 md:py-20 lg:py-24 bg-dark-secondary">
@@ -121,13 +55,13 @@ const Portfolio = () => {
 
         {/* Projects Grid */}
         <motion.div
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
           {...staggerContainer}
         >
           {filteredProjects.map((project, idx) => (
             <motion.div
               key={project.id}
-              className="glass p-5 rounded-xl hover-lift group cursor-pointer"
+              className="glass p-6 rounded-xl hover-lift group cursor-pointer"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: idx * 0.05 }}
@@ -135,7 +69,7 @@ const Portfolio = () => {
               whileHover={{ scale: 1.03 }}
             >
               {/* Icon */}
-              <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center text-2xl mb-4">
+              <div className="w-14 h-14 rounded-lg bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center text-3xl mb-4">
                 {project.icon}
               </div>
 
@@ -145,7 +79,7 @@ const Portfolio = () => {
               </span>
 
               {/* Title */}
-              <h3 className="text-lg font-bold mt-2 mb-1 group-hover:text-primary transition-colors">
+              <h3 className="text-xl font-bold mt-3 mb-2 group-hover:text-primary transition-colors">
                 {project.title}
               </h3>
 
@@ -154,12 +88,31 @@ const Portfolio = () => {
                 {project.description}
               </p>
 
+              {/* Features */}
+              <div className="mb-4">
+                <div className="flex flex-wrap gap-1.5">
+                  {project.features.slice(0, 4).map((feature, i) => (
+                    <span
+                      key={i}
+                      className="text-xs bg-dark-tertiary px-2 py-1 rounded text-secondary"
+                    >
+                      {feature}
+                    </span>
+                  ))}
+                  {project.features.length > 4 && (
+                    <span className="text-xs bg-dark-tertiary px-2 py-1 rounded text-primary">
+                      +{project.features.length - 4} more
+                    </span>
+                  )}
+                </div>
+              </div>
+
               {/* Tech Stack */}
-              <div className="flex flex-wrap gap-1.5">
-                {project.tech.map((t, i) => (
+              <div className="flex flex-wrap gap-1.5 pt-3 border-t border-primary/10">
+                {project.technologies.map((t, i) => (
                   <span
                     key={i}
-                    className="text-xs bg-dark-tertiary px-2 py-0.5 rounded text-secondary"
+                    className="text-xs font-medium text-primary/80 bg-primary/5 px-2 py-0.5 rounded"
                   >
                     {t}
                   </span>
@@ -167,6 +120,28 @@ const Portfolio = () => {
               </div>
             </motion.div>
           ))}
+
+          {/* 10+ Projects Stats Card */}
+          <motion.div
+            className="glass p-6 rounded-xl hover-lift flex flex-col items-center justify-center text-center min-h-[280px]"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4, delay: 0.3 }}
+            viewport={{ once: true }}
+            whileHover={{ scale: 1.03 }}
+          >
+            <motion.div
+              className="text-6xl sm:text-7xl md:text-8xl font-bold gradient-text mb-4"
+              animate={{ scale: [1, 1.05, 1] }}
+              transition={{ duration: 3, repeat: Infinity }}
+            >
+              10+
+            </motion.div>
+            <h3 className="text-xl sm:text-2xl font-bold mb-2">Projects Delivered</h3>
+            <p className="text-secondary text-sm">
+              Mobile Apps, Websites & Custom Software Solutions
+            </p>
+          </motion.div>
         </motion.div>
       </div>
     </section>
