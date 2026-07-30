@@ -5,7 +5,7 @@ export const COMPANY_INFO = {
   founder: "Mrs. Pratibha Sharma",
   email: "hs.techind@gmail.com",
   phones: ["+91 7024630069", "+91 8225819957"],
-  website: "https://hs-tech-steel.vercel.app",
+  website: "https://hstechind.netlify.app/",
   address: "Indore - Betma - 453001, Madhya Pradesh, India",
   googleMaps: "https://maps.app.goo.gl/TkHAqMJAG2ZSRacv9",
   tagline: "Transforming Ideas Into Digital Excellence",

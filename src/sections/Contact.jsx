@@ -85,7 +85,7 @@ const Contact = () => {
     {
       icon: <FiGlobe className="w-6 h-6" />,
       title: "Website",
-      value: "hs-tech-steel.vercel.app",
+      value: "hstechind.netlify.app",
       href: COMPANY_INFO.website,
     },
   ];
