@@ -221,6 +221,25 @@ export const PORTFOLIO_PROJECTS = [
   },
   {
     id: 5,
+    title: "Daily Habit Tracker",
+    category: "Mobile App",
+    description:
+      "A beautifully designed cross-platform app helping users build better habits, stay consistent, and achieve goals with engaging UI and delightful animations.",
+    features: [
+      "Swipe-to-Complete Gestures",
+      "Animated Progress Ring",
+      "Daily Streak Tracking",
+      "Confetti Celebrations",
+      "Habit Calendar",
+      "Statistics Dashboard",
+      "Light & Dark Theme",
+      "60 FPS Animations",
+    ],
+    icon: "🔥",
+    technologies: ["React Native", "TypeScript", "Reanimated", "Lottie"],
+  },
+  {
+    id: 6,
     title: "Book Publication Website",
     category: "Website",
     description:
